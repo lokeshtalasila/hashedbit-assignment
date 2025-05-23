@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tourist Site</title>
+  <style>
+    /* Global resets */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: url('https://source.unsplash.com/1600x900/?travel,landscape') no-repeat center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 2;
+    }
+    header .logo  {
+      height: 100px;
+      border-radius: 10rem;
+    }
+    header .title {
+      font-size: 1.8rem;
+      margin-left: 10px;
+    }
+    #menu-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    header .social-links a {
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    nav {
+      background: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav ul { list-style: none; display: inline-flex; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: #333; text-decoration: none; font-weight: bold; }
+    nav ul li a:hover { text-decoration: underline; }
+    /* Sidebar styles */
+    aside {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: rgba(255,255,255,0.95);
+      padding: 20px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 3;
+    }
+    aside.open { left: 0; }
+    aside h2 { margin-bottom: 15px; }
+    aside ul { list-style: disc; padding-left: 20px; }
+    /* Main content */
+    main {
+      padding: 20px;
+      margin-top: 10px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .box {
+      background: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      width: 300px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .box img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; }
+    footer {
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+    }
+    @media (max-width: 768px) {
+      main { flex-direction: column; align-items: center; }
+      aside { width: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex; align-items:center;">
+      <img src="logo.jpg" alt="Tourist Site Logo" class="logo" />
+      <div class="title">Tourist Site</div>
+    </div>
+    <div>
+      <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+      <span class="social-links">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="Instagram">📸</a>
+      </span>
+    </div>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Tours</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <aside id="sidebar">
+    <h2>Quick Links</h2>
+    <ul>
+      <li><a href="#site1">Eiffel Tower</a></li>
+      <li><a href="#site2">Great Wall</a></li>
+      <li><a href="#site3">Machu Picchu</a></li>
+    </ul>
+  </aside>
+  <main>
+    <div id="site1" class="box">
+      <h3>Eiffel Tower</h3>
+      <img src="eiffel-tower.jpg" alt="Eiffel Tower" />
+      <p>The iconic symbol of Paris, offering panoramic city views.</p>
+    </div>
+    <div id="site2" class="box">
+      <h3>Great Wall</h3>
+      <img src="The_Great_Wall_of_China.jpg" alt="Great Wall of China" />
+      <p>An ancient series of walls and fortifications spanning across China.</p>
+    </div>
+    <div id="site3" class="box">
+      <h3>Machu Picchu</h3>
+      <img src="machu-picchu.jpg" alt="Machu Picchu" />
+      <p>The 15th-century Inca citadel set high in the Andes Mountains.</p>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Tourist Site. All rights reserved.</p>
+  </footer>
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    toggleBtn.addEventListener('click', () => sidebar.classList.toggle('open'));
+  </script>
+</body>
+</html>
