@@ -1,0 +1,2 @@
+# hashedbit-assignment
+hashed bit
