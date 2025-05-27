@@ -1,0 +1,11 @@
+.details {
+  padding: 30px;
+  text-align: center;
+}
+.details img {
+  height: 400px;
+  margin-bottom: 20px;
+}
+.details button {
+  padding: 10px 20px;
+}

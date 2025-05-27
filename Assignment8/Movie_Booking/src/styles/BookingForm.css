@@ -1,0 +1,16 @@
+.form-container {
+  padding: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+}
+input {
+  padding: 10px;
+}
+button {
+  padding: 10px;
+}
